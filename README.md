@@ -3,7 +3,7 @@
 Projeto de gerenciamento de carros | To-Do List.
 
 Sistema de:
-  Cadastro de Clientes/Carros;
+  Cadastro de Clientes/Carros; <br>
   Venda de carros.
 
 Para executar: 
