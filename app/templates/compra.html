@@ -1,0 +1,81 @@
+<style>
+    .container {
+    width: 100vw;
+    height: 100vh;
+    background: #22e22c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    }
+    #box {
+        width: 500px;
+        height: auto;
+        background: #fff;
+        border-radius: 3px;
+        /* padding: 1rem; */
+        position: relative;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-items: center; */
+    gap: 10px;
+    }
+        body {
+        margin: 0px;
+        }
+    #sub{
+        border: none;
+        color: white;
+        font-size: 20px;
+        background-color: rgb(14, 13, 13);
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+    #link{
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+        border-radius: 5px;
+        background-color: white;
+        text-decoration: none;
+        text-align: center;
+    }
+    .inpt{
+        border: none;
+        width: 50px;
+    }
+        </style>
+        
+        <div class="container">
+            <div id="box">
+                <h1>Finalizar Venda</h1>
+           
+                <form method="post" action="/finalizar-venda/">
+                    <div>
+                        <div>
+                            <input type="text" name="modelo" value="{{carro[3]}}" class="inpt" readonly>
+                            <input type="text" name="cor" value="{{carro[4]}}" class="inpt"  readonly>
+                            <input type="text" name="id" value="{{carro[0]}}" class="inpt" hidden  readonly>
+                        </div>
+
+                        <label for="">Comprador:</label><br>
+                            <select name="id_cliente" id="">
+                                {% for post in clientes %}
+                                    <option value={{post[0]}}>{{post[1]}}</option>
+                                {% endfor %}
+                            </select>
+    
+                    </div>
+                    <input type="submit" value="Finalizar" id="sub">
+                </form>
+                <a href="/" id="link">Retornar</a>
+            </div>
+            
+        </div>
+        

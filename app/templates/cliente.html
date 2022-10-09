@@ -1,0 +1,103 @@
+<style>
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #22e22c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+}
+#box {
+    width: 500px;
+    height: auto;
+    background: #fff;
+    border-radius: 3px;
+    /* padding: 1rem; */
+    position: relative;
+    padding: 5px;
+
+}
+body {
+    margin: 0px;
+}
+
+.table-wrapper{
+    margin: auto;
+    /* box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 ); */
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #324960;
+}
+#link{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+}
+    </style>
+    
+    <div class="container">
+        <div id="box">
+            <h1>{{ cliente[1] }}</h1>
+            
+            <div class="table-wrapper">
+                <table class="fl-table">
+                <thead>
+                    <tr>
+                        <th>Cód.</th>
+                        <th>Modelo</th>
+                        <th>Cor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in carros %}
+                    <tr>
+                        <td>{{post[0]}}</td>
+                        <td>{{post[1]}}</td>
+                        <td>{{post[3]}}</td>
+                        {% if post[4] == "N" %}
+                            <td><a href="/venda/{{post[0]}}/{{post[2]}}/{{post[1]}}/{{post[3]}}">Vender</a></td>
+                        {% else %}
+                            <td>Está a venda!</td>
+                        {% endif %}
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+           </div>
+        </div>
+        <a href="/" id="link">Retornar</a>
+        
+    </div>
+    

@@ -1,0 +1,67 @@
+<style>
+.container {
+width: 100vw;
+height: 100vh;
+background: #22e22c;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 2px;
+}
+#box {
+    width: 500px;
+    height: 150px;
+    background: #fff;
+    border-radius: 3px;
+    /* padding: 1rem; */
+    position: relative;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+}
+body {
+    margin: 0px;
+}
+#link{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+    text-justify: auto;
+}
+    </style>
+    
+    <div class="container">
+        <div id="box">
+            <h1>Cadastro de Carros</h1>
+            <form method="post" action="/cadastro/carros">
+                    <select name="id_cliente" id="">
+                        {% for post in dados %}
+                            <option value={{post[0]}}>{{post[1]}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="cor" id="">
+                            <option value='Amarelo'>Amarelo</option>
+                            <option value='Cinza'>Cinza</option>
+                            <option value='Azul'>Azul</option>
+                        </select>
+                    <select name="modelo" id="">
+                        <option value='Escotilha'>Escotilha</option>
+                        <option value='Sedan'>Sedan</option>
+                        <option value='Conversível'>Conversível</option>
+                    </select>
+                <input type="submit" value="Cadastrar">
+            </form>
+            <h1>{{mensagem}}</h1>
+        </div>
+        <a href="/" id="link">Retornar</a>
+        
+    </div>
+    
