@@ -1,10 +1,12 @@
-# Nork-Town
+# gerenciamento de carros com flask
 
 Projeto de gerenciamento de carros | To-Do List.
 
 Sistema de:
   Cadastro de Clientes/Carros; <br>
-  Venda de carros.
+  Venda de carros.<br>
+  
+  Notas: Não existe carros sem clientes no sistema, todo carro deve ter um. 
 
 Para executar: 
     1° Fazer um git clone para a maquina de teste.<br>
@@ -13,3 +15,4 @@ Para executar:
     
 Projeto realizado utilizando: Flask e Sqlite.
     
+Projeto para fins de estudo.
